@@ -88,262 +88,264 @@ module Miso.Svg.Element
 import           Miso.Html.Types hiding (style_)
 import           Miso.String        (MisoString)
 -----------------------------------------------------------------------------
+import qualified Prelude            as P
+-----------------------------------------------------------------------------
 -- | Used to construct a @VNode@ with namespace *"svg"*
 --
 -- > document.createElementNS('http://www.w3.org/2000/svg', 'circle');
 --
-nodeSvg :: MisoString -> [Attribute action] -> [View action] -> View action
-nodeSvg nodeName = node SVG nodeName Nothing
+nodeSvg_ :: MisoString -> [Attribute action] -> [View action] -> View action
+nodeSvg_ = P.flip (node SVG) P.Nothing
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/svg>
+-- | [\<svg\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/svg)
 svg_ :: [Attribute action] -> [View action] -> View action
-svg_ = nodeSvg "svg"
+svg_ = nodeSvg_ "svg"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/foreignObject>
+-- | [\<foreignObject\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/foreignObject)
 foreignObject_ :: [Attribute action] -> [View action] -> View action
-foreignObject_ = nodeSvg "foreignObject"
+foreignObject_ = nodeSvg_ "foreignObject"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/circle>
+-- | [\<circle\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/circle)
 circle_ :: [Attribute action] -> [View action] -> View action
-circle_ = nodeSvg "circle"
+circle_ = nodeSvg_ "circle"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/ellipse>
+-- | [\<ellipse\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/ellipse)
 ellipse_ :: [Attribute action] -> [View action] -> View action
-ellipse_ = nodeSvg "ellipse"
+ellipse_ = nodeSvg_ "ellipse"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/image>
+-- | [\<image\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/image)
 image_ :: [Attribute action] -> [View action] -> View action
-image_ = nodeSvg "image"
+image_ = nodeSvg_ "image"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/line>
+-- | [\<line\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/line)
 line_ :: [Attribute action] -> [View action] -> View action
-line_ = nodeSvg "line"
+line_ = nodeSvg_ "line"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/path>
+-- | [\<path\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/path)
 path_ :: [Attribute action] -> [View action] -> View action
-path_ = nodeSvg "path"
+path_ = nodeSvg_ "path"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/polygon>
+-- | [\<polygon\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/polygon)
 polygon_ :: [Attribute action] -> [View action] -> View action
-polygon_ = nodeSvg "polygon"
+polygon_ = nodeSvg_ "polygon"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/polyline>
+-- | [\<polyline\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/polyline)
 polyline_ :: [Attribute action] -> [View action] -> View action
-polyline_ = nodeSvg "polyline"
+polyline_ = nodeSvg_ "polyline"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/rect>
+-- | [\<rect\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/rect)
 rect_ :: [Attribute action] -> [View action] -> View action
-rect_ = nodeSvg "rect"
+rect_ = nodeSvg_ "rect"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/use>
+-- | [\<use\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/use)
 use_ :: [Attribute action] -> [View action] -> View action
-use_ = nodeSvg "use"
+use_ = nodeSvg_ "use"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animate>
+-- | [\<animate\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animate)
 animate_ :: [Attribute action] -> [View action] -> View action
-animate_ = nodeSvg "animate"
+animate_ = nodeSvg_ "animate"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animateMotion>
+-- | [\<animateMotion\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animateMotion)
 animateMotion_ :: [Attribute action] -> [View action] -> View action
-animateMotion_ = nodeSvg "animateMotion"
+animateMotion_ = nodeSvg_ "animateMotion"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animateTransform>
+-- | [\<animateTransform\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/animateTransform)
 animateTransform_ :: [Attribute action] -> [View action] -> View action
-animateTransform_ = nodeSvg "animateTransform"
+animateTransform_ = nodeSvg_ "animateTransform"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/mpath>
+-- | [\<mpath\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/mpath)
 mpath_ :: [Attribute action] -> [View action] -> View action
-mpath_ = nodeSvg "mpath"
+mpath_ = nodeSvg_ "mpath"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/set>
+-- | [\<set\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/set)
 set_ :: [Attribute action] -> [View action] -> View action
-set_ = nodeSvg "set"
+set_ = nodeSvg_ "set"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/desc>
+-- | [\<desc\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/desc)
 desc_ :: [Attribute action] -> [View action] -> View action
-desc_ = nodeSvg "desc"
+desc_ = nodeSvg_ "desc"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/metadata>
+-- | [\<metadata\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/metadata)
 metadata_ :: [Attribute action] -> [View action] -> View action
-metadata_ = nodeSvg "metadata"
+metadata_ = nodeSvg_ "metadata"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/title>
+-- | [\<title\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/title)
 title_ :: [Attribute action] -> [View action] -> View action
-title_ = nodeSvg "title"
+title_ = nodeSvg_ "title"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/a>
+-- | [\<a\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/a)
 a_ :: [Attribute action] -> [View action] -> View action
-a_ = nodeSvg "a"
+a_ = nodeSvg_ "a"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/defs>
+-- | [\<defs\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/defs)
 defs_ :: [Attribute action] -> [View action] -> View action
-defs_ = nodeSvg "defs"
+defs_ = nodeSvg_ "defs"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/g>
+-- | [\<g\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/g)
 g_ :: [Attribute action] -> [View action] -> View action
-g_ = nodeSvg "g"
+g_ = nodeSvg_ "g"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/marker>
+-- | [\<marker\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/marker)
 marker_ :: [Attribute action] -> [View action] -> View action
-marker_ = nodeSvg "marker"
+marker_ = nodeSvg_ "marker"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/mask>
+-- | [\<mask\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/mask)
 mask_ :: [Attribute action] -> [View action] -> View action
-mask_ = nodeSvg "mask"
+mask_ = nodeSvg_ "mask"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/pattern>
+-- | [\<pattern\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/pattern)
 pattern_ :: [Attribute action] -> [View action] -> View action
-pattern_ = nodeSvg "pattern"
+pattern_ = nodeSvg_ "pattern"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/switch>
+-- | [\<switch\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/switch)
 switch_ :: [Attribute action] -> [View action] -> View action
-switch_ = nodeSvg "switch"
+switch_ = nodeSvg_ "switch"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/symbol>
+-- | [\<symbol\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/symbol)
 symbol_ :: [Attribute action] -> [View action] -> View action
-symbol_ = nodeSvg "symbol"
+symbol_ = nodeSvg_ "symbol"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/textPath>
+-- | [\<textPath\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/textPath)
 textPath_ :: [Attribute action] -> [View action] -> View action
-textPath_ = nodeSvg "textPath"
+textPath_ = nodeSvg_ "textPath"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text>
+-- | [\<text\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/text)
 text_ :: [Attribute action] -> [View action] -> View action
-text_ = nodeSvg "text"
+text_ = nodeSvg_ "text"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/tspan>
+-- | [\<tspan\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/tspan)
 tspan_ :: [Attribute action] -> [View action] -> View action
-tspan_ = nodeSvg "tspan"
+tspan_ = nodeSvg_ "tspan"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/linearGradient>
+-- | [\<linearGradient\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/linearGradient)
 linearGradient_ :: [Attribute action] -> [View action] -> View action
-linearGradient_ = nodeSvg "linearGradient"
+linearGradient_ = nodeSvg_ "linearGradient"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient>
+-- | [\<radialGradient\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/radialGradient)
 radialGradient_ :: [Attribute action] -> [View action] -> View action
-radialGradient_ = nodeSvg "radialGradient"
+radialGradient_ = nodeSvg_ "radialGradient"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/stop>
+-- | [\<stop\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/stop)
 stop_ :: [Attribute action] -> [View action] -> View action
-stop_ = nodeSvg "stop"
+stop_ = nodeSvg_ "stop"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feBlend>
+-- | [\<feBlend\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feBlend)
 feBlend_ :: [Attribute action] -> [View action] -> View action
-feBlend_ = nodeSvg "feBlend"
+feBlend_ = nodeSvg_ "feBlend"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feColorMatrix>
+-- | [\<feColorMatrix\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feColorMatrix)
 feColorMatrix_ :: [Attribute action] -> [View action] -> View action
-feColorMatrix_ = nodeSvg "feColorMatrix"
+feColorMatrix_ = nodeSvg_ "feColorMatrix"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComponentTransfer>
+-- | [\<feComponentTransfer\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComponentTransfer)
 feComponentTransfer_ :: [Attribute action] -> [View action] -> View action
-feComponentTransfer_ = nodeSvg "feComponentTransfer"
+feComponentTransfer_ = nodeSvg_ "feComponentTransfer"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComposite>
+-- | [\<feComposite\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feComposite)
 feComposite_ :: [Attribute action] -> [View action] -> View action
-feComposite_ = nodeSvg "feComposite"
+feComposite_ = nodeSvg_ "feComposite"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feConvolveMatrix>
+-- | [\<feConvolveMatrix\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feConvolveMatrix)
 feConvolveMatrix_ :: [Attribute action] -> [View action] -> View action
-feConvolveMatrix_ = nodeSvg "feConvolveMatrix"
+feConvolveMatrix_ = nodeSvg_ "feConvolveMatrix"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDiffuseLighting>
+-- | [\<feDiffuseLighting\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDiffuseLighting)
 feDiffuseLighting_ :: [Attribute action] -> [View action] -> View action
-feDiffuseLighting_ = nodeSvg "feDiffuseLighting"
+feDiffuseLighting_ = nodeSvg_ "feDiffuseLighting"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDisplacementMap>
+-- | [\<feDisplacementMap\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDisplacementMap)
 feDisplacementMap_ :: [Attribute action] -> [View action] -> View action
-feDisplacementMap_ = nodeSvg "feDisplacementMap"
+feDisplacementMap_ = nodeSvg_ "feDisplacementMap"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDropShadow>
+-- | [\<feDropShadow\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDropShadow)
 feDropShadow_ :: [Attribute action] -> [View action] -> View action
-feDropShadow_ = nodeSvg "feDropShadow"
+feDropShadow_ = nodeSvg_ "feDropShadow"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFlood>
+-- | [\<feFlood\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFlood)
 feFlood_ :: [Attribute action] -> [View action] -> View action
-feFlood_ = nodeSvg "feFlood"
+feFlood_ = nodeSvg_ "feFlood"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFuncA>
+-- | [\<feFuncA\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFuncA)
 feFuncA_ :: [Attribute action] -> [View action] -> View action
-feFuncA_ = nodeSvg "feFuncA"
+feFuncA_ = nodeSvg_ "feFuncA"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFuncB>
+-- | [\<feFuncB\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFuncB)
 feFuncB_ :: [Attribute action] -> [View action] -> View action
-feFuncB_ = nodeSvg "feFuncB"
+feFuncB_ = nodeSvg_ "feFuncB"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFuncG>
+-- | [\<feFuncG\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFuncG)
 feFuncG_ :: [Attribute action] -> [View action] -> View action
-feFuncG_ = nodeSvg "feFuncG"
+feFuncG_ = nodeSvg_ "feFuncG"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFuncR>
+-- | [\<feFuncR\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feFuncR)
 feFuncR_ :: [Attribute action] -> [View action] -> View action
-feFuncR_ = nodeSvg "feFuncR"
+feFuncR_ = nodeSvg_ "feFuncR"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feGaussianBlur>
+-- | [\<feGaussianBlur\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feGaussianBlur)
 feGaussianBlur_ :: [Attribute action] -> [View action] -> View action
-feGaussianBlur_ = nodeSvg "feGaussianBlur"
+feGaussianBlur_ = nodeSvg_ "feGaussianBlur"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feImage>
+-- | [\<feImage\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feImage)
 feImage_ :: [Attribute action] -> [View action] -> View action
-feImage_ = nodeSvg "feImage"
+feImage_ = nodeSvg_ "feImage"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feMerge>
+-- | [\<feMerge\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feMerge)
 feMerge_ :: [Attribute action] -> [View action] -> View action
-feMerge_ = nodeSvg "feMerge"
+feMerge_ = nodeSvg_ "feMerge"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feMergeNode>
+-- | [\<feMergeNode\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feMergeNode)
 feMergeNode_ :: [Attribute action] -> [View action] -> View action
-feMergeNode_ = nodeSvg "feMergeNode"
+feMergeNode_ = nodeSvg_ "feMergeNode"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feMorphology>
+-- | [\<feMorphology\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feMorphology)
 feMorphology_ :: [Attribute action] -> [View action] -> View action
-feMorphology_ = nodeSvg "feMorphology"
+feMorphology_ = nodeSvg_ "feMorphology"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feOffset>
+-- | [\<feOffset\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feOffset)
 feOffset_ :: [Attribute action] -> [View action] -> View action
-feOffset_ = nodeSvg "feOffset"
+feOffset_ = nodeSvg_ "feOffset"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feSpecularLighting>
+-- | [\<feSpecularLighting\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feSpecularLighting)
 feSpecularLighting_ :: [Attribute action] -> [View action] -> View action
-feSpecularLighting_ = nodeSvg "feSpecularLighting"
+feSpecularLighting_ = nodeSvg_ "feSpecularLighting"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feTile>
+-- | [\<feTile\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feTile)
 feTile_ :: [Attribute action] -> [View action] -> View action
-feTile_ = nodeSvg "feTile"
+feTile_ = nodeSvg_ "feTile"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feTurbulence>
+-- | [\<feTurbulence\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feTurbulence)
 feTurbulence_ :: [Attribute action] -> [View action] -> View action
-feTurbulence_ = nodeSvg "feTurbulence"
+feTurbulence_ = nodeSvg_ "feTurbulence"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDistantLight>
+-- | [\<feDistantLight\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feDistantLight)
 feDistantLight_ :: [Attribute action] -> [View action] -> View action
-feDistantLight_ = nodeSvg "feDistantLight"
+feDistantLight_ = nodeSvg_ "feDistantLight"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/fePointLight>
+-- | [\<fePointLight\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/fePointLight)
 fePointLight_ :: [Attribute action] -> [View action] -> View action
-fePointLight_ = nodeSvg "fePointLight"
+fePointLight_ = nodeSvg_ "fePointLight"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feSpotLight>
+-- | [\<feSpotLight\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/feSpotLight)
 feSpotLight_ :: [Attribute action] -> [View action] -> View action
-feSpotLight_ = nodeSvg "feSpotLight"
+feSpotLight_ = nodeSvg_ "feSpotLight"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/clipPath>
+-- | [\<clipPath\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/clipPath)
 clipPath_ :: [Attribute action] -> [View action] -> View action
-clipPath_ = nodeSvg "clipPath"
+clipPath_ = nodeSvg_ "clipPath"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/filter>
+-- | [\<filter\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/filter)
 filter_ :: [Attribute action] -> [View action] -> View action
-filter_ = nodeSvg "filter"
+filter_ = nodeSvg_ "filter"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/script>
+-- | [\<script\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/script)
 script_ :: [Attribute action] -> [View action] -> View action
-script_ = nodeSvg "script"
+script_ = nodeSvg_ "script"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style>
+-- | [\<style\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/style)
 style_ :: [Attribute action] -> [View action] -> View action
-style_ = nodeSvg "style"
+style_ = nodeSvg_ "style"
 -----------------------------------------------------------------------------
--- | <https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/view>
+-- | [\<view\>](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Element/view)
 view_ :: [Attribute action] -> [View action] -> View action
-view_ = nodeSvg "view"
+view_ = nodeSvg_ "view"
 -----------------------------------------------------------------------------
